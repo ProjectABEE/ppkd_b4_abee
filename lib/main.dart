@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ppkd_b4_abee/tugas1/scaffold.dart';
+import 'package:ppkd_b4_abee/tugas1/tugas1.dart';
 
 void main() {
   runApp(const MyApp());
