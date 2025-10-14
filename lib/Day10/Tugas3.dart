@@ -77,6 +77,32 @@ class Tugas3 extends StatelessWidget {
                 ],
               ),
             ),
+          GridView.builder(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,
+                crossAxisSpacing: 8,
+                mainAxisSpacing: 8,
+              ),
+              itemCount: 6,
+              itemBuilder: (BuildContext context, int index) {
+                return Container(
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: Colors.amber,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Stack(children: [
+                    Text("Kotak ${index + 1}",
+                    style: TextStyle(fontSize: 20),
+                    ),
+                  // Image.asset("assets/images/abe2.png")
+                  ],
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
