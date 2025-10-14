@@ -17,7 +17,10 @@ class Tugas2 extends StatelessWidget {
             radius: 50,
             backgroundImage: AssetImage('assets/images/abe.webp'),
           ),
-          Text("Abee", style: TextStyle(fontSize: 30)),
+          Text(
+            "Abee",
+            style: TextStyle(fontSize: 30, fontFamily: 'SuperTrend'),
+          ),
           Padding(
             padding: EdgeInsets.all(16.0),
             child: Container(
@@ -68,11 +71,15 @@ class Tugas2 extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 1),
-          Container(
-            child: Padding(
-              padding: EdgeInsets.all(10.0),
-              child: Row(children: [Text("DEYYY!!! Bisinglahhh...")]),
+          SizedBox(
+            height: 45,
+            child: Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Text("DEYY!!! Bisinglahhh..."),
+                ),
+              ],
             ),
           ),
           Row(
@@ -146,7 +153,7 @@ class Tugas2 extends StatelessWidget {
                   colors: [Colors.blue, Colors.lightBlue],
                 ),
               ),
-              margin: EdgeInsets.only(top: 300, bottom: 10),
+              margin: EdgeInsets.only(top: 230, bottom: 10),
               child: Center(child: Text("Created by Abee")),
             ),
           ),
