@@ -77,7 +77,17 @@ class Tugas3 extends StatelessWidget {
                 ],
               ),
             ),
-          GridView.builder(
+            Padding(
+              padding: EdgeInsetsGeometry.all(8),
+              child: Container(
+                decoration: BoxDecoration(),
+                child: Text(
+                  "Galery",
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
+            GridView.builder(
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -90,15 +100,15 @@ class Tugas3 extends StatelessWidget {
                 return Container(
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                    color: Colors.amber,
+                    color: Colors.white,
                     borderRadius: BorderRadius.circular(20),
+                    boxShadow: [BoxShadow(color: Colors.grey, blurRadius: 5)],
                   ),
-                  child: Stack(children: [
-                    Text("Kotak ${index + 1}",
-                    style: TextStyle(fontSize: 20),
-                    ),
-                  // Image.asset("assets/images/abe2.png")
-                  ],
+                  child: Stack(
+                    children: [
+                      Text("+", style: TextStyle(fontSize: 50)),
+                      // Image.asset("assets/images/abe2.png")
+                    ],
                   ),
                 );
               },
