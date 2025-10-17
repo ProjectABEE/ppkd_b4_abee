@@ -69,7 +69,7 @@ class _Tugas5State extends State<Tugas5> {
                   Row(
                     children: [
                       CircleAvatar(
-                        radius: 25,
+                        radius: 30,
                         backgroundImage: AssetImage('assets/images/abe.webp'),
                       ),
                       Text(
