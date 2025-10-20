@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ppkd_b4_abee/day13/buttonwidger.dart';
 import 'package:ppkd_b4_abee/day13/buttonwidget2.dart';
+import 'package:ppkd_b4_abee/day15/homepage.dart';
 
 class LoginUI extends StatefulWidget {
   const LoginUI({super.key});
@@ -12,6 +13,7 @@ class LoginUI extends StatefulWidget {
 class _LoginUIState extends State<LoginUI> {
   bool obscurepass = true;
   bool box = false;
+  bool isbuttonenable = false;
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final formKey = GlobalKey<FormState>();
@@ -21,6 +23,13 @@ class _LoginUIState extends State<LoginUI> {
     super.dispose();
     emailController.dispose();
     passwordController.dispose();
+  }
+
+  void checkformfield() {
+    setState(() {
+      isbuttonenable =
+          emailController.text.isNotEmpty && passwordController.text.isNotEmpty;
+    });
   }
 
   @override
@@ -188,6 +197,8 @@ class _LoginUIState extends State<LoginUI> {
                         ),
                       ],
                     ),
+
+                    // Login Button
                     SizedBox(
                       width: 300,
                       height: 50,
@@ -200,8 +211,23 @@ class _LoginUIState extends State<LoginUI> {
                         ),
                         onPressed: () {
                           if (formKey.currentState!.validate()) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                // Untuk memindahkan ke halaman tertuju
+                                builder: (context) => TampilanAwal(),
+                              ),
+                            );
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(content: Text("Login Berhasil")),
+                            );
+                          } else {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text(
+                                  'ERROR : Isi semua data dengan benar ',
+                                ),
+                              ),
                             );
                           }
                         },
@@ -211,6 +237,8 @@ class _LoginUIState extends State<LoginUI> {
                         ),
                       ),
                     ),
+
+                    // Row ---OR---
                     Padding(
                       padding: EdgeInsets.all(12),
                       child: Row(
@@ -223,6 +251,8 @@ class _LoginUIState extends State<LoginUI> {
                         ],
                       ),
                     ),
+
+                    // Login Dengan Google dan Facebook
                     SizedBox(
                       width: 300,
                       height: 50,

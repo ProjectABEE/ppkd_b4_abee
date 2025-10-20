@@ -27,7 +27,8 @@ class _Tugas5State extends State<Tugas5> {
         },
         child: Icon(Icons.add),
       ),
-      appBar: AppBar(title: Text("Tugas 5")),
+      appBar: AppBar(title: Text("Tugas 5"), automaticallyImplyLeading: false),
+
       body: SingleChildScrollView(
         physics: BouncingScrollPhysics(),
         child: Column(
