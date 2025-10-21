@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ppkd_b4_abee/day13/Logintest.dart';
+import 'package:intl/date_symbol_data_local.dart';
+import 'package:ppkd_b4_abee/day16/cusdrawer.dart';
 
-void main() {
+void main() async {
+  await initializeDateFormatting('id_ID', null);
   runApp(const MyApp());
 }
 
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
       ),
-      home: const LoginUI(),
+      home: const Cusdrawer(),
     );
   }
 }
