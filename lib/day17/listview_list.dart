@@ -19,6 +19,16 @@ class _listViewListState extends State<listViewList> {
     "Peralatan Dapur",
     "Makanan Ringan",
     "Minuman",
+    "Mainan Anak",
+    "Peralatan Olahraga",
+    "Produk Kesehatan",
+    "Kosmetik",
+    "Obat-obatan",
+    "Aksesoris Mobil",
+    "Perabot Rumah",
+    "Sepatu & Sandal",
+    "Barang Bekas",
+    "Voucher & Tiket",
   ];
 
   @override
@@ -28,7 +38,7 @@ class _listViewListState extends State<listViewList> {
         children: [
           const Padding(
             padding: EdgeInsets.all(4.0),
-            child: Text("List Kategori:", style: TextStyle(fontSize: 20)),
+            child: Text("List Kategori", style: TextStyle(fontSize: 20)),
           ),
           Expanded(
             child: ListView.builder(

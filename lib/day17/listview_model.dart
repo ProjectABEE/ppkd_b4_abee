@@ -80,7 +80,7 @@ class _ListViewModelState extends State<ListViewModel> {
         children: [
           const Padding(
             padding: EdgeInsets.all(4.0),
-            child: Text("List Sayur:", style: TextStyle(fontSize: 20)),
+            child: Text("List Sayur", style: TextStyle(fontSize: 20)),
           ),
           Expanded(
             child: ListView.builder(

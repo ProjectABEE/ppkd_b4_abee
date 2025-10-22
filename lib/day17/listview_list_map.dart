@@ -19,6 +19,16 @@ class _ListViewListMapsayurState extends State<ListViewListMapKategori> {
     {'nama': "Buku & Majalah", 'Icon': Icons.menu_book},
     {'nama': "Peralatan Dapur", 'Icon': Icons.kitchen},
     {'nama': "Makanan Ringan", 'Icon': Icons.fastfood},
+    {'nama': "Mainan Anak", 'Icon': Icons.toys},
+    {'nama': "Peralatan Olahraga", 'Icon': Icons.sports_basketball},
+    {'nama': "Produk Kesehatan", 'Icon': Icons.health_and_safety},
+    {'nama': "Kosmetik", 'Icon': Icons.brush},
+    {'nama': "Obat-obatan", 'Icon': Icons.local_pharmacy},
+    {'nama': "Aksesoris Mobil", 'Icon': Icons.directions_car},
+    {'nama': "Perabot Rumah", 'Icon': Icons.weekend},
+    {'nama': "Sepatu & Sandal", 'Icon': Icons.directions_run},
+    {'nama': "Barang Bekas", 'Icon': Icons.restore},
+    {'nama': "Voucher & Tiket", 'Icon': Icons.confirmation_num},
   ];
   @override
   Widget build(BuildContext context) {
@@ -27,7 +37,7 @@ class _ListViewListMapsayurState extends State<ListViewListMapKategori> {
         children: [
           Padding(
             padding: EdgeInsets.all(4.0),
-            child: Text("List Kategori:", style: TextStyle(fontSize: 20)),
+            child: Text("List Kategori", style: TextStyle(fontSize: 20)),
           ),
           Expanded(
             child: ListView.builder(

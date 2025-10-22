@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:ppkd_b4_abee/day16/Tentangapl.dart';
-import 'package:ppkd_b4_abee/day16/drawer.dart';
+import 'package:ppkd_b4_abee/day16/cusdrawer.dart';
 
 class pageButtonNav extends StatefulWidget {
   const pageButtonNav({super.key});
@@ -14,7 +14,7 @@ class _pageButtonNavState extends State<pageButtonNav> {
   int selectedindex = 0;
   static const List<Widget> widgetOptions = [
     // Center(child: Text("Home")),
-    PageUtama(),
+    Cusdrawer(),
     tentangAPK(),
   ];
   @override
