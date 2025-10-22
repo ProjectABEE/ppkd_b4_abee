@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ppkd_b4_abee/day13/buttonwidger.dart';
 import 'package:ppkd_b4_abee/day13/buttonwidget2.dart';
-import 'package:ppkd_b4_abee/day15/homepage.dart';
+import 'package:ppkd_b4_abee/day16/pagebuttonnav.dart';
 
 class LoginUI extends StatefulWidget {
   const LoginUI({super.key});
@@ -211,12 +211,13 @@ class _LoginUIState extends State<LoginUI> {
                         ),
                         onPressed: () {
                           if (formKey.currentState!.validate()) {
-                            Navigator.push(
+                            Navigator.pushAndRemoveUntil(
                               context,
                               MaterialPageRoute(
                                 // Untuk memindahkan ke halaman tertuju
-                                builder: (context) => TampilanAwal(),
+                                builder: (context) => pageButtonNav(),
                               ),
+                              (Route) => false,
                             );
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(content: Text("Login Berhasil")),
