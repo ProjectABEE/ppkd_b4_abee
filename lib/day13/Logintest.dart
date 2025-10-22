@@ -217,7 +217,7 @@ class _LoginUIState extends State<LoginUI> {
                                 // Untuk memindahkan ke halaman tertuju
                                 builder: (context) => pageButtonNav(),
                               ),
-                              (Route) => false,
+                              (route) => false,
                             );
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(content: Text("Login Berhasil")),

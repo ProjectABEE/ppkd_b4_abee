@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
-import 'package:ppkd_b4_abee/day17/drawer.dart';
+import 'package:ppkd_b4_abee/day17/tugas10/daftar.dart';
 
 void main() async {
   await initializeDateFormatting('id_ID', null);
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
       ),
-      home: const DrawerTugas9(),
+      home: const dafarui(),
     );
   }
 }
