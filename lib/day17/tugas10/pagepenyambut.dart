@@ -18,9 +18,9 @@ class _HalamanPenyambutState extends State<HalamanPenyambut> {
   @override
   Widget build(BuildContext context) {
     // final args =
-    //     ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+    // ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
     // final nama = args['nama'];
-    // final email = args['email'];
+    // final email = args['email'];w
     // final kota = args['kota'];
 
     return Scaffold(

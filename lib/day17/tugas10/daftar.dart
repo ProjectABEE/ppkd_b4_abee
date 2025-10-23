@@ -52,7 +52,7 @@ class _dafaruiState extends State<dafarui> {
               SizedBox(height: 150),
               Container(
                 width: 343,
-                height: 550,
+                height: 580,
                 margin: EdgeInsets.only(bottom: 40),
                 padding: EdgeInsets.symmetric(vertical: 20),
                 decoration: BoxDecoration(
@@ -154,7 +154,7 @@ class _dafaruiState extends State<dafarui> {
                                   ),
                                   onPressed: () {
                                     if (formkey.currentState!.validate()) {
-                                      Navigator.push(
+                                      Navigator.pushAndRemoveUntil(
                                         context,
                                         MaterialPageRoute(
                                           builder: (context) =>
@@ -171,7 +171,7 @@ class _dafaruiState extends State<dafarui> {
                                           //   },
                                           // ),
                                         ),
-                                        // (route) => false,
+                                        (route) => false,
                                       );
                                       ScaffoldMessenger.of(
                                         context,
@@ -181,15 +181,40 @@ class _dafaruiState extends State<dafarui> {
                                         ),
                                       );
                                     } else {
-                                      ScaffoldMessenger.of(
-                                        context,
-                                      ).showSnackBar(
-                                        SnackBar(
-                                          content: Text(
-                                            "Masukan Semua Data Dengan Benar",
-                                          ),
-                                        ),
+                                      showDialog(
+                                        context: context,
+                                        builder: (context) {
+                                          return AlertDialog(
+                                            title: Text("Validasi eror"),
+                                            content: Text(
+                                              "Tolong isi semua dengan benar",
+                                            ),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () {
+                                                  Navigator.pop(context);
+                                                },
+                                                child: Text("Ok"),
+                                              ),
+                                              // TextButton(
+                                              //   onPressed: () {
+                                              //     Navigator.pop(context);
+                                              //   },
+                                              //   child: Text("Ga Ok"),
+                                              // ),
+                                            ],
+                                          );
+                                        },
                                       );
+                                      // ScaffoldMessenger.of(
+                                      //   context,
+                                      // ).showSnackBar(
+                                      //   SnackBar(
+                                      //     content: Text(
+                                      //       "Masukan Semua Data Dengan Benar",
+                                      //     ),
+                                      //   ),
+                                      // );
                                     }
                                     print('Nama: ${namacontroler.text}');
                                     print('Email: ${emailcontroler.text}');

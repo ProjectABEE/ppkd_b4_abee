@@ -36,6 +36,7 @@ dependencies:
   intl: ^0.20.2
   line_icons: ^2.0.3
   mobkit_dashed_border: ^0.0.8
+  shared_preferences: ^2.5.3
   sidebarx: ^0.17.2
 
 dev_dependencies:
