@@ -10,9 +10,9 @@ class dafarui extends StatefulWidget {
 
 class _dafaruiState extends State<dafarui> {
   bool isbuttonenable = false;
-  final namacontroler = TextEditingController();
-  final emailcontroler = TextEditingController();
-  final domcontroler = TextEditingController();
+  final TextEditingController namacontroler = TextEditingController();
+  final TextEditingController emailcontroler = TextEditingController();
+  final TextEditingController domcontroler = TextEditingController();
   final formkey = GlobalKey<FormState>();
   @override
   void dispose() {
@@ -154,20 +154,24 @@ class _dafaruiState extends State<dafarui> {
                                   ),
                                   onPressed: () {
                                     if (formkey.currentState!.validate()) {
-                                      Navigator.pushAndRemoveUntil(
+                                      Navigator.push(
                                         context,
                                         MaterialPageRoute(
                                           builder: (context) =>
-                                              HalamanPenyambut(),
-                                          settings: RouteSettings(
-                                            arguments: {
-                                              'nama': namacontroler.text,
-                                              'kota': domcontroler.text,
-                                              'email': emailcontroler.text,
-                                            },
-                                          ),
+                                              HalamanPenyambut(
+                                                email: emailcontroler.text,
+                                                nama: namacontroler.text,
+                                                kota: domcontroler.text,
+                                              ),
+                                          // settings: RouteSettings(
+                                          //   arguments: {
+                                          //     'nama': namacontroler.text,
+                                          //     'kota': domcontroler.text,
+                                          //     'email': emailcontroler.text,
+                                          //   },
+                                          // ),
                                         ),
-                                        (route) => false,
+                                        // (route) => false,
                                       );
                                       ScaffoldMessenger.of(
                                         context,

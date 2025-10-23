@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 
 class HalamanPenyambut extends StatefulWidget {
-  const HalamanPenyambut({super.key});
-
+  const HalamanPenyambut({
+    super.key,
+    required this.email,
+    required this.nama,
+    required this.kota,
+  });
+  final String email;
+  final String nama;
+  final String kota;
   @override
   State<HalamanPenyambut> createState() => _HalamanPenyambutState();
 }
@@ -10,14 +17,14 @@ class HalamanPenyambut extends StatefulWidget {
 class _HalamanPenyambutState extends State<HalamanPenyambut> {
   @override
   Widget build(BuildContext context) {
-    final args =
-        ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
-    final nama = args['nama'];
-    final email = args['email'];
-    final kota = args['kota'];
+    // final args =
+    //     ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+    // final nama = args['nama'];
+    // final email = args['email'];
+    // final kota = args['kota'];
 
     return Scaffold(
-      appBar: AppBar(title: Text('Halo $nama')),
+      appBar: AppBar(title: Text('Halo ${widget.nama}')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -26,9 +33,9 @@ class _HalamanPenyambutState extends State<HalamanPenyambut> {
             const Text("Selamat Datang!", style: TextStyle(fontSize: 24)),
             const SizedBox(height: 10),
             const Text("Berikut adalah informasi Anda:"),
-            Text("Nama: $nama"),
-            Text("Email: $email"),
-            Text("Kota: $kota"),
+            Text("Nama: ${widget.nama}"),
+            Text("Email: ${widget.email}"),
+            Text("Kota: ${widget.kota}"),
           ],
         ),
       ),
