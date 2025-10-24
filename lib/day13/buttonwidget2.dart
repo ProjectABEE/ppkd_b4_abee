@@ -19,10 +19,10 @@ class CustomLoginButton extends StatelessWidget {
       ),
       onPressed: () {},
       child: Row(
-        spacing: 8,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(imagePath, height: 18, width: 18),
+          const SizedBox(width: 8),
           Text(
             label,
             style: TextStyle(
