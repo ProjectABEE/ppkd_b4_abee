@@ -58,7 +58,9 @@ class _HalamanPenyambutState extends State<PageUtamaEdu> {
                           children: [
                             ListTile(
                               title: Text(items.name),
-                              subtitle: Text(items.email),
+                              subtitle: Text(
+                                '${items.email} | Umur: ${items.age} | Kelas: ${items.classs}',
+                              ),
                             ),
                           ],
                         );

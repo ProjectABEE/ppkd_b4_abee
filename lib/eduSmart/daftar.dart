@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ppkd_b4_abee/eduSmart/bottomnav.dart';
 import 'package:ppkd_b4_abee/eduSmart/database/db_helper.dart';
 import 'package:ppkd_b4_abee/eduSmart/model/student_model.dart';
-import 'package:ppkd_b4_abee/eduSmart/pagepenyambut.dart';
 
 class DaftarEdu extends StatefulWidget {
   const DaftarEdu({super.key});
@@ -63,7 +63,7 @@ class _DaftarEduState extends State<DaftarEdu> {
                 SizedBox(height: 50),
                 Container(
                   width: 343,
-                  height: 750,
+                  height: 700,
                   margin: EdgeInsets.only(bottom: 40),
                   padding: EdgeInsets.symmetric(vertical: 20),
                   decoration: BoxDecoration(
@@ -93,6 +93,11 @@ class _DaftarEduState extends State<DaftarEdu> {
                                 controller: namacontroler,
                                 autovalidateMode: AutovalidateMode.onUnfocus,
                                 decoration: InputDecoration(
+                                  errorStyle: TextStyle(
+                                    fontSize: 0,
+                                    color: Colors.red,
+                                    height: 0,
+                                  ),
                                   border: OutlineInputBorder(),
                                   hintText: 'Masukan Nama Anda',
                                 ),
@@ -110,6 +115,11 @@ class _DaftarEduState extends State<DaftarEdu> {
                                 controller: emailcontroler,
                                 autovalidateMode: AutovalidateMode.onUnfocus,
                                 decoration: InputDecoration(
+                                  errorStyle: TextStyle(
+                                    fontSize: 0,
+                                    color: Colors.red,
+                                    height: 0,
+                                  ),
                                   border: OutlineInputBorder(),
                                   hintText: 'Masukan Email Anda',
                                 ),
@@ -132,6 +142,11 @@ class _DaftarEduState extends State<DaftarEdu> {
                                 controller: umurcontroler,
                                 autovalidateMode: AutovalidateMode.onUnfocus,
                                 decoration: InputDecoration(
+                                  errorStyle: TextStyle(
+                                    fontSize: 0,
+                                    color: Colors.red,
+                                    height: 0,
+                                  ),
                                   border: OutlineInputBorder(),
                                   hintText: 'Masukan Umur Anda',
                                 ),
@@ -152,6 +167,11 @@ class _DaftarEduState extends State<DaftarEdu> {
                                 controller: kelascontroler,
                                 autovalidateMode: AutovalidateMode.onUnfocus,
                                 decoration: InputDecoration(
+                                  errorStyle: TextStyle(
+                                    fontSize: 0,
+                                    color: Colors.red,
+                                    height: 0,
+                                  ),
                                   border: OutlineInputBorder(),
                                   hintText: 'Masukan Kelas Anda',
                                 ),
@@ -165,7 +185,7 @@ class _DaftarEduState extends State<DaftarEdu> {
                                   return null;
                                 },
                               ),
-                              SizedBox(height: 4),
+                              SizedBox(height: 2),
                               Text("Password"),
                               const SizedBox(height: 4),
                               TextFormField(
@@ -173,6 +193,11 @@ class _DaftarEduState extends State<DaftarEdu> {
                                 autovalidateMode: AutovalidateMode.onUnfocus,
                                 obscureText: obscurepass,
                                 decoration: InputDecoration(
+                                  errorStyle: TextStyle(
+                                    fontSize: 0,
+                                    color: Colors.red,
+                                    height: 0,
+                                  ),
                                   border: OutlineInputBorder(),
                                   hintText: 'Masukan Password anda',
                                   suffixIcon: IconButton(
@@ -194,7 +219,7 @@ class _DaftarEduState extends State<DaftarEdu> {
                                   return null;
                                 },
                               ),
-                              SizedBox(height: 8),
+                              SizedBox(height: 4),
                               Center(
                                 child: SizedBox(
                                   width: 300,
@@ -211,12 +236,13 @@ class _DaftarEduState extends State<DaftarEdu> {
                                         Navigator.pushAndRemoveUntil(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) => PageUtamaEdu(
-                                              email: emailcontroler.text,
-                                              nama: namacontroler.text,
-                                              kelas: kelascontroler.text,
-                                              umur: umurcontroler.text,
-                                            ),
+                                            builder: (context) =>
+                                                BottomNavigationEDU(
+                                                  // email: emailcontroler.text,
+                                                  // nama: namacontroler.text,
+                                                  // kelas: kelascontroler.text,
+                                                  // umur: umurcontroler.text,
+                                                ),
                                             // settings: RouteSettings(
                                             //   arguments: {
                                             //     'nama': namacontroler.text,
