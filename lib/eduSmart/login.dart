@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:ppkd_b4_abee/day13/buttonwidger.dart';
 import 'package:ppkd_b4_abee/day13/buttonwidget2.dart';
 import 'package:ppkd_b4_abee/day18/preferences/preferences_handler.dart';
+import 'package:ppkd_b4_abee/eduSmart/bottomnav.dart';
 import 'package:ppkd_b4_abee/eduSmart/daftar.dart';
 import 'package:ppkd_b4_abee/eduSmart/database/db_helper.dart';
-import 'package:ppkd_b4_abee/eduSmart/pagepenyambut.dart';
 
 class LoginEdu extends StatefulWidget {
   const LoginEdu({super.key});
@@ -238,11 +238,11 @@ class _LoginEduState extends State<LoginEdu> {
                               context,
                               MaterialPageRoute(
                                 // Untuk memindahkan ke halaman tertuju
-                                builder: (context) => PageUtamaEdu(
-                                  email: emailController.text,
-                                  nama: 'User',
-                                  kelas: '-',
-                                  umur: '-',
+                                builder: (context) => BottomNavigationEDU(
+                                  // email: emailController.text,
+                                  // nama: 'User',
+                                  // kelas: '-',
+                                  // umur: '-',
                                 ),
                               ),
                             );

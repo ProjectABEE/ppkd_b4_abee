@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ppkd_b4_abee/day17/tugas9/constant/appimage.dart';
-import 'package:ppkd_b4_abee/day18/Logintest.dart';
-import 'package:ppkd_b4_abee/day18/pagebuttonnav.dart';
 import 'package:ppkd_b4_abee/day18/preferences/preferences_handler.dart';
+import 'package:ppkd_b4_abee/eduSmart/bottomnav.dart';
+import 'package:ppkd_b4_abee/eduSmart/login.dart';
 
 class SplashScreenDay18 extends StatefulWidget {
   const SplashScreenDay18({super.key});
@@ -25,13 +25,13 @@ class _SplashScreenDay18State extends State<SplashScreenDay18> {
       if (isLogin != null && isLogin == true) {
         Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (context) => PageButtonDay18()),
+          MaterialPageRoute(builder: (context) => BottomNavigationEDU()),
           (route) => false,
         );
       } else {
         Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (context) => LoginUiDay18()),
+          MaterialPageRoute(builder: (context) => LoginEdu()),
           (route) => false,
         );
       }

@@ -71,7 +71,7 @@ class _BottomNavigationEDUState extends State<BottomNavigationEDU> {
       //     ),
       //   ],
       // ),
-      // body: widgetOptions[selectedindex],
+      body: widgetOptions[selectedindex],
     );
   }
 }
