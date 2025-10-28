@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ppkd_b4_abee/eduSmart/bottomnav.dart';
 import 'package:ppkd_b4_abee/eduSmart/database/db_helper.dart';
 import 'package:ppkd_b4_abee/eduSmart/model/student_model.dart';
+import 'package:ppkd_b4_abee/eduSmart/pagepenyambut.dart';
 
 class DaftarEdu extends StatefulWidget {
   const DaftarEdu({super.key});
@@ -236,13 +236,12 @@ class _DaftarEduState extends State<DaftarEdu> {
                                         Navigator.pushAndRemoveUntil(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) =>
-                                                BottomNavigationEDU(
-                                                  // email: emailcontroler.text,
-                                                  // nama: namacontroler.text,
-                                                  // kelas: kelascontroler.text,
-                                                  // umur: umurcontroler.text,
-                                                ),
+                                            builder: (context) => PageUtamaEdu(
+                                              email: emailcontroler.text,
+                                              nama: namacontroler.text,
+                                              kelas: kelascontroler.text,
+                                              umur: umurcontroler.text,
+                                            ),
                                             // settings: RouteSettings(
                                             //   arguments: {
                                             //     'nama': namacontroler.text,
