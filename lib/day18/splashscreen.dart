@@ -19,7 +19,7 @@ class _SplashScreenDay18State extends State<SplashScreenDay18> {
   }
 
   isLoginFunction() async {
-    Future.delayed(Duration(seconds: 3)).then((value) async {
+    Future.delayed(Duration(seconds: 1)).then((value) async {
       var isLogin = await PreferenceHandler.getLogin();
       print(isLogin);
       if (isLogin != null && isLogin == true) {
@@ -41,16 +41,22 @@ class _SplashScreenDay18State extends State<SplashScreenDay18> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Center(child: Image.asset(AppImages.bayam)),
-          Text(
-            "Brokoli Apps",
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Color(0xff256BE8), Color(0xff1CE2DA)],
           ),
-        ],
+        ),
+        // Biar full tinggi layar
+        width: double.infinity,
+        height: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [Center(child: Image.asset(AppImages.logoEdu))],
+        ),
       ),
     );
   }

@@ -10,4 +10,5 @@ class AppImages {
   static const selada = "$assetImage/selada.png";
   static const seledri = "$assetImage/seledri.png";
   static const wortel = "$assetImage/wortel.png";
+  static const logoEdu = "$assetImage/EduSmart.png";
 }

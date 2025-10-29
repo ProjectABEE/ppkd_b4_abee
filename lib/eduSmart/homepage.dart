@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:ppkd_b4_abee/day18/preferences/preferences_handler.dart';
+import 'package:ppkd_b4_abee/eduSmart/login.dart';
+import 'package:ppkd_b4_abee/eduSmart/widget/announcementsW.dart';
+import 'package:ppkd_b4_abee/eduSmart/widget/dayboxw.dart';
 
 class HomePageEdu extends StatefulWidget {
   const HomePageEdu({super.key});
@@ -21,7 +25,7 @@ class _HomePageEduState extends State<HomePageEdu> {
                 width: double.infinity,
                 padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                 decoration: BoxDecoration(
-                  color: Color(0xff0240DE),
+                  color: Color(0XFF2567E8),
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(30),
                     bottomRight: Radius.circular(30),
@@ -300,7 +304,7 @@ class _HomePageEduState extends State<HomePageEdu> {
               Container(
                 padding: EdgeInsets.only(left: 20),
                 margin: EdgeInsets.symmetric(horizontal: 15),
-                height: 325,
+                height: 300,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
                   color: Colors.white,
@@ -353,6 +357,116 @@ class _HomePageEduState extends State<HomePageEdu> {
                               ),
                             ),
                           ),
+                          TextButton(
+                            onPressed: () {
+                              PreferenceHandler.removeLogin();
+                              Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => LoginEdu(),
+                                ),
+                                (route) => false,
+                              );
+                            },
+                            child: Text("Logout"),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 24),
+                    SizedBox(
+                      height: 160,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: const [
+                          AnnouncementItem(
+                            label: "Important",
+                            date: "Oct 25, 2025",
+                            title: "Mid-Term Exam Schedule Released",
+                            author: "Mrs. Sarah Johnson",
+                          ),
+                          AnnouncementItem(
+                            label: "Notice",
+                            date: "Oct 20, 2025",
+                            title: "Library Will Be Closed on Friday",
+                            author: "Admin Office",
+                          ),
+                          AnnouncementItem(
+                            label: "Update",
+                            date: "Oct 18, 2025",
+                            title: "New Course Materials Available Online",
+                            author: "Mr. David Lee",
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 30),
+              Container(
+                padding: EdgeInsets.only(left: 20, top: 16),
+                margin: EdgeInsets.symmetric(horizontal: 15),
+                height: 474,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 1,
+                      blurRadius: 20,
+                      offset: const Offset(0, 8),
+                    ),
+                  ],
+                ),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 2, right: 20),
+                      child: Row(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.all(8),
+                            decoration: BoxDecoration(
+                              color: const Color(0x1000C950),
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: const Icon(
+                              Icons.trending_up,
+                              color: Color(0xff00C950),
+                              size: 20,
+                            ),
+                          ),
+                          // Icon(
+                          //   Icons.notifications_none_outlined,
+                          //   color: Color(0xffFF6900),
+                          //   size: 26,
+                          // ),
+                          SizedBox(width: 8),
+                          Text(
+                            "Recent Grades",
+                            style: TextStyle(fontSize: 16.9),
+                          ),
+                          Spacer(),
+                          Column(
+                            children: [
+                              Text(
+                                "Avarage",
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.grey,
+                                ),
+                              ),
+                              Text(
+                                "90",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.blue,
+                                ),
+                              ),
+                            ],
+                          ),
                         ],
                       ),
                     ),
@@ -363,40 +477,6 @@ class _HomePageEduState extends State<HomePageEdu> {
           ),
         ),
       ),
-    );
-  }
-}
-
-class DayBox extends StatelessWidget {
-  final String day;
-  final bool checked;
-  const DayBox({super.key, required this.day, required this.checked});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          height: 42,
-          width: 42,
-          decoration: BoxDecoration(
-            color: checked ? const Color(0xff22c55e) : Colors.grey.shade300,
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: Icon(
-            checked ? Icons.check : Icons.check,
-            color: checked ? Colors.white : Colors.grey.shade600,
-          ),
-        ),
-        const SizedBox(height: 6),
-        Text(
-          day,
-          style: TextStyle(
-            color: checked ? Colors.black : Colors.grey,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-      ],
     );
   }
 }

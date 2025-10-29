@@ -57,10 +57,9 @@ class _LoginEduState extends State<LoginEdu> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height: 100),
-              Image.asset("assets/images/grup.png"),
-              const SizedBox(height: 10),
-              SizedBox(height: 10),
+              SizedBox(height: 20),
+              Image.asset("assets/images/EduSmart.png", scale: 12),
+              SizedBox(height: 4),
               // Kotak login
               Container(
                 width: 343,
