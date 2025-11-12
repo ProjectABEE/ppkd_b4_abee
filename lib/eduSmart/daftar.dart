@@ -11,6 +11,7 @@ class DaftarEdu extends StatefulWidget {
 }
 
 class _DaftarEduState extends State<DaftarEdu> {
+  bool obscurepass = true;
   bool isbuttonenable = false;
   final TextEditingController namacontroler = TextEditingController();
   final TextEditingController emailcontroler = TextEditingController();
@@ -41,7 +42,6 @@ class _DaftarEduState extends State<DaftarEdu> {
 
   @override
   Widget build(BuildContext context) {
-    bool obscurepass = true;
     return Scaffold(
       resizeToAvoidBottomInset: true,
       body: Container(
@@ -205,7 +205,11 @@ class _DaftarEduState extends State<DaftarEdu> {
                                       obscurepass = !obscurepass;
                                     });
                                   },
-                                  icon: Icon(Icons.visibility_off),
+                                  icon: Icon(
+                                    obscurepass
+                                        ? Icons.visibility_off
+                                        : Icons.visibility,
+                                  ),
                                 ),
                               ),
                               validator: (value) {

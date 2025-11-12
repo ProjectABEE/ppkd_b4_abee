@@ -11,7 +11,10 @@ class BottomNavigationEDU extends StatefulWidget {
 
 class _BottomNavigationEDUState extends State<BottomNavigationEDU> {
   int selectedindex = 0;
-  static const List<Widget> widgetOptions = [HomePageEdu()];
+  static const List<Widget> widgetOptions = [
+    HomePageEdu(),
+    Center(child: Text("Home")),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
