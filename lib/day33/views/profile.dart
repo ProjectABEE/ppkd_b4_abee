@@ -21,7 +21,7 @@ class _ProfilePageDay33State extends State<ProfilePageDay33> {
     loadProfile();
   }
 
-  void loadProfile() async {
+  loadProfile() async {
     try {
       final result = await AuthAPI.getProfile();
       setState(() {
@@ -88,7 +88,7 @@ class _ProfilePageDay33State extends State<ProfilePageDay33> {
                   final nameController = TextEditingController(
                     text: user?.name ?? "",
                   );
-
+                  final parentContext = context;
                   showDialog(
                     context: context,
                     builder: (context) {
@@ -132,13 +132,19 @@ class _ProfilePageDay33State extends State<ProfilePageDay33> {
                                 });
 
                                 // Notifikasi success
-                                ScaffoldMessenger.of(context).showSnackBar(
+                                ScaffoldMessenger.of(
+                                  parentContext,
+                                ).showSnackBar(
                                   const SnackBar(
                                     content: Text("Profil berhasil diperbarui"),
                                   ),
                                 );
+
+                                await loadProfile();
                               } catch (e) {
-                                ScaffoldMessenger.of(context).showSnackBar(
+                                ScaffoldMessenger.of(
+                                  parentContext,
+                                ).showSnackBar(
                                   SnackBar(content: Text(e.toString())),
                                 );
                               }
