@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
-import 'package:ppkd_b4_abee/eduSmart/view/splashscreen.dart';
+import 'package:ppkd_b4_abee/day33/views/splash.dart';
 
 void main() async {
   await initializeDateFormatting('id_ID', null);
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
       ),
-      home: const SplashScreen(),
+      home: const SplashScreenDay33(),
     );
   }
 }

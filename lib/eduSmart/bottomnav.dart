@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:ppkd_b4_abee/day33/views/profile.dart';
 import 'package:ppkd_b4_abee/eduSmart/homepage.dart';
 
 class BottomNavigationEDU extends StatefulWidget {
@@ -13,7 +14,9 @@ class _BottomNavigationEDUState extends State<BottomNavigationEDU> {
   int selectedindex = 0;
   static const List<Widget> widgetOptions = [
     HomePageEdu(),
-    Center(child: Text("Home")),
+    Center(child: Text("Sc")),
+    Center(child: Text("Gd")),
+    ProfilePageDay33(),
   ];
   @override
   Widget build(BuildContext context) {
